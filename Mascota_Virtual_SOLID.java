@@ -59,6 +59,30 @@ public class Mascota_Virtual_SOLID {
             mascota.felicidad -= 2;
         }
     }
+    
+    static class CuidadoJugar implements CuidadoMascota {
+    @Override
+    public void aplicar(Mascota mascota) {
+        mascota.felicidad += 10;
+        mascota.energia -= 5;
+        }
+    }
+
+    static class CuidadoComprarAccesorio implements CuidadoMascota {
+    @Override
+    public void aplicar(Mascota mascota) {
+        mascota.felicidad += 8;
+        mascota.higiene += 2;  
+        }
+    }
+
+    static class CuidadoAyudarCrecer implements CuidadoMascota {
+    @Override
+    public void aplicar(Mascota mascota) {
+        mascota.energia += 12;
+        mascota.felicidad += 6;
+        }
+    }
 
     public static void main(String[] args) {
         Mascota mascota = new Mascota("Firulais", 80, 70, 60);
